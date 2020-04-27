@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    Hello! Bienvenido al soft de telefonica de Villa Martelli!
+{% endblock %}
+
+{% block body %}
+    Hello, {{ nombre }} tu pass es {{ pas }}!
+<tr>
+<th>
+</th>
+</tr>
+
+<table class="egt">
+  <tr>
+    <th>Dirección</th>
+    <th>Teléfono</th>
+    <th>Atendió</th>
+    <th>No en casa</th>
+  </tr>
+  <tr>
+    <td>{{ registro.direccion }}</td>
+    <td>{{ registro.telefono }}</td>
+    <td>Última vez que atendió: {{ registro.fecha_atendio }}</td>
+    <td>Última vez que se lo llamó: {{ registro.fecha_tocado }}</td>
+
+  </tr>
+</table>
+<form action="/atendio" method="post">
+<button class="btn btn-primary">Atendió</button>
+</form>
+
+<form action="/noencasa" method="post">
+<button class="btn btn-secondary">No en casa</button>
+</form>
+{% endblock %}

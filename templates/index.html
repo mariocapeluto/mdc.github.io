@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Login to MDC Agenda
+{% endblock %}
+
+{% block body %}
+    <h1>Iniciar sesión</h1>
+
+<form action="{{ url_for('hello') }}" method="POST">
+  <p>Nombre: <input type="text" name="nombre" size="40"></p>
+  <p>Contraseña: <input type="password" name="pas" ></p>
+  <p>
+    <input type="submit" value="Enviar">
+    <input type="reset" value="Borrar">
+  </p>
+<p>No esta registrado? <a href="/register.html">Click aqui</a></p>
+
+</form>
+
+{% endblock %}
